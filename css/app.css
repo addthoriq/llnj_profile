@@ -16,6 +16,7 @@ body {
 header.navbar-container {
   max-width: 1200px;
   width: 100%;
+  height: 100px;
   margin-inline: auto;
   display: flex;
   justify-content: space-around;
@@ -59,10 +60,10 @@ main {
   max-width: 1200px;
   width: 100%;
   margin-inline: auto;
-  padding: 2rem 4rem;
   flex: 1;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -70,11 +71,15 @@ main .content {
   flex: 1;
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 main .content .content-image {
   flex: 1;
   display: flex;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 main .content .content-image img {
@@ -85,6 +90,8 @@ main .content .content-image img {
 
 main .content .content-description {
   flex: 1 1;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 main .content .content-description .title {
@@ -119,7 +126,7 @@ main .content .content-description button:hover {
   background-color: transparent;
 }
 
-main aside {
+main #sticky-sosmed {
   position: fixed;
   inset-block: 0;
   inset-inline-end: 0;
@@ -157,4 +164,129 @@ main aside .social-media li a {
 
 main aside .social-media li a:hover {
   color: #F79BD3;
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-block: 1rem;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.featured-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+main .content-activity {
+  flex: 1;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+main .content-card {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+
+  padding: 20px 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+main .hub-kami {
+  display: flex;
+  flex-direction: row;
+}
+
+main .hub-kami .content-wa {
+  display: flex;
+  flex-direction: column;
+}
+
+main .hub-kami .content-wa .card-wa {
+  display: flex;
+  flex-direction: row;
+}
+
+.img-wa {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+}
+.title-wa, .nama-wa {
+  text-align: center;
+}
+
+.btn-wa {
+  text-decoration: none;
+  margin: 10px auto;
+  display: block;
+  text-align: center;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-color: #1EAE98;
+  cursor: pointer;
+  transition: all .15s ease-in;
+}
+
+.btn-wa:hover {
+  border: 3px solid #1EAE98;
+  color: #1EAE98;
+  background-color: transparent;
+}
+
+footer {
+  margin-top: 20px;
+  background-color: #EA1179;
+}
+
+footer h2 {
+  color: white;
+  display: block;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  header.navbar-container {
+    flex-direction: column;
+  }
+  header.navbar-container .nav-list ul {
+    flex-wrap: wrap;
+    column-gap: .5rem;
+  }
+  main .content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  main .content .content-description .title {
+    font-size: 3rem;
+  }
+ 
+  main .content .content-description p {
+    font-size: 1rem;
+  }
+ 
+  main .content .content-image {
+    order: -1;
+  }
 }
