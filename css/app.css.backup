@@ -67,42 +67,44 @@ main {
   align-items: center;
 }
 
-main .content-beranda {
+main .content {
+  flex: 1;
   display: flex;
   align-items: center;
-  min-height: 100vh;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
-main .content-beranda .content-image {
+main .content .content-image {
   flex: 1;
   display: flex;
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
 
-main .content-beranda .content-image img {
+main .content .content-image img {
   margin: auto;
   min-width: 250px;
   width: 300px;
 }
 
-main .content-beranda .content-description {
+main .content .content-description {
   flex: 1 1;
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
 
-main .content-beranda .content-description .title {
+main .content .content-description .title {
   font-size: 3.5rem;
   margin-block: 1rem;
 }
 
-main .content-beranda .content-description p {
+main .content .content-description p {
   line-height: 1.7rem;
   font-size: 1.2rem;
 }
 
-main .content-beranda .content-description button {
+main .content .content-description button {
   padding: .8rem 2.5rem;
   margin-block-start: 1rem;
   text-transform: uppercase;
@@ -118,45 +120,81 @@ main .content-beranda .content-description button {
   transition: all .15s ease-in;
 }
 
-main .content-beranda .content-description button:hover {
+main .content .content-description button:hover {
   border: 3px solid #EA1179;
   color: #EA1179;
   background-color: transparent;
 }
 
-main .content-article {
-  flex: 1;
-  min-height: 100vh;
+main #sticky-sosmed {
+  position: fixed;
+  inset-block: 0;
+  inset-inline-end: 0;
+}
+
+main aside .social-media {
+  height: 100%;
   display: flex;
-  flex-direction: row;
+}
+
+main aside .social-media ul {
+  padding: 1.5rem 1rem;
+  margin: auto;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  background-color: #EA1179;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+main aside .social-media li {
+  list-style-type: none;
+}
+
+main aside .social-media li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+  transition: all .1s ease-in-out;
+}
+
+main aside .social-media li a:hover {
+  color: #F79BD3;
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-block: 1rem;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.featured-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+main .content-activity {
+  flex: 1;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
 
-main .content-article aside {
-  padding: 20px;
-  align-items: center;
-  flex-direction: column;
-  display: flex;
-  min-height: 100%;
-}
-
-main .content-article aside img {
-  width: 250px;
-}
-
-main .content-article .articles {
+main .content-card {
   padding: 20px;
   display: flex;
   align-items: center;
-  flex-direction: column;
 }
-main .content-article .articles .article-card {
-  display: flex;
-  flex-direction: row;
-}
-
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -164,6 +202,31 @@ main .content-article .articles .article-card {
   padding: 20px 20px;
   margin-top: 20px;
   margin-left: 20px;
+}
+
+main .hub-kami {
+  display: flex;
+  flex-direction: row;
+}
+
+main .hub-kami .content-wa {
+  display: flex;
+  flex-direction: column;
+}
+
+main .hub-kami .content-wa .card-wa {
+  display: flex;
+  flex-direction: row;
+}
+
+.img-wa {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+}
+.title-wa, .nama-wa {
+  text-align: center;
 }
 
 .btn-wa {
@@ -191,21 +254,6 @@ main .content-article .articles .article-card {
   background-color: transparent;
 }
 
-.card-center {
-  max-width: 100%;
-  text-align: center;
-}
-
-main .content-find {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-  padding-top: 5rem;
-  padding-bottom: 20px;
-}
-
 footer {
   margin-top: 20px;
   background-color: #EA1179;
@@ -220,97 +268,25 @@ footer h2 {
 @media screen and (max-width: 768px) {
   header.navbar-container {
     flex-direction: column;
-    margin-bottom: 5rem;
   }
   header.navbar-container .nav-list ul {
     flex-wrap: wrap;
     column-gap: .5rem;
   }
-  header.navbar-container .logo {
-    margin-top: 5rem;
-  }
-  main .content-beranda {
+  main .content {
     flex-direction: column;
     gap: 2rem;
   }
 
-  main .content-beranda .content-description .title {
-    padding: 0 2rem;
+  main .content .content-description .title {
     font-size: 3rem;
   }
  
-  main .content-beranda .content-description p {
-    padding: 0 2rem;
+  main .content .content-description p {
     font-size: 1rem;
   }
  
-  main .content-beranda .content-image {
-    margin-top: 3rem;
-    margin-bottom: 0;
+  main .content .content-image {
     order: -1;
-  }
-
-  main .content-beranda .content-description button {
-    display: block;
-    margin: auto;
-  }
-
-  main .content-article {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  main .content-article .articles {
-    flex-direction: column;
-  }
-  
-  main .content-article .articles .article-card {
-    flex-direction: column;
-  }
-
-  main .content-article aside {
-    min-height: 0;
-  }
-
-  main .content-find {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  main .content-find .card {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  main .content-find .card iframe {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  header.navbar-container .logo {
-    margin-top: 7rem;
-  }
-
-  maini .content-article .articles {
-    margin-top: 10rem;
-  }
-
-  main .content-article .articles .article-card .card {
-    height: 680px;
-  }
-
-  main .content-article .articles .article-card iframe {
-    width: 100%;
-  }
-
-  main .content-find {
-    margin-top: 0;
-  }
-
-  footer h2 {
-    font-size: 18px;
   }
 }
